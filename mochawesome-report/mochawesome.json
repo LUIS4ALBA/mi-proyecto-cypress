@@ -1,0 +1,256 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-01-15T22:49:30.677Z",
+    "end": "2026-01-15T22:49:47.340Z",
+    "duration": 16663,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "affe5636-7c2e-4d4d-ba9d-cca0d8efe330",
+      "title": "",
+      "fullFile": "cypress/e2e/SitioPrueba/Secciones.cy.js",
+      "file": "cypress/e2e/SitioPrueba/Secciones.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0cf6515c-7634-4c9d-8c92-3985cb567960",
+          "title": "El titulo es el correcto para cada página en Free Range Tester",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Valida que Acceder a Free Range Testers sea el titulo de https://www.freerangetesters.com/login",
+              "fullTitle": "El titulo es el correcto para cada página en Free Range Tester Valida que Acceder a Free Range Testers sea el titulo de https://www.freerangetesters.com/login",
+              "timedOut": null,
+              "duration": 1920,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(testData.Location);\ncy.title().should('include', testData.Title);",
+              "err": {},
+              "uuid": "ce8edd60-e4ad-4d6f-a4f9-1bf86caded29",
+              "parentUUID": "0cf6515c-7634-4c9d-8c92-3985cb567960",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ce8edd60-e4ad-4d6f-a4f9-1bf86caded29"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1920,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "815c3f8b-ba85-479c-b8f1-883620d6edba",
+          "title": "El titulo es el correcto para cada página en Free Range Tester",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Valida que Academia sea el titulo de https://www.freerangetesters.com/academia",
+              "fullTitle": "El titulo es el correcto para cada página en Free Range Tester Valida que Academia sea el titulo de https://www.freerangetesters.com/academia",
+              "timedOut": null,
+              "duration": 3328,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(testData.Location);\ncy.title().should('include', testData.Title);",
+              "err": {},
+              "uuid": "c7d688e7-ed78-4f0b-8fdb-e53de6c82245",
+              "parentUUID": "815c3f8b-ba85-479c-b8f1-883620d6edba",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c7d688e7-ed78-4f0b-8fdb-e53de6c82245"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3328,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "58a4fb00-3966-4585-8b33-71fc56b516ed",
+          "title": "El titulo es el correcto para cada página en Free Range Tester",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Valida que Cursos sea el titulo de https://www.freerangetesters.com/cursos",
+              "fullTitle": "El titulo es el correcto para cada página en Free Range Tester Valida que Cursos sea el titulo de https://www.freerangetesters.com/cursos",
+              "timedOut": null,
+              "duration": 5315,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(testData.Location);\ncy.title().should('include', testData.Title);",
+              "err": {},
+              "uuid": "b4433434-fb0b-4612-84e6-f888ac339f08",
+              "parentUUID": "58a4fb00-3966-4585-8b33-71fc56b516ed",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b4433434-fb0b-4612-84e6-f888ac339f08"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5315,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "94c08dfa-917c-4931-94e4-5993885c2329",
+          "title": "El titulo es el correcto para cada página en Free Range Tester",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Valida que Mentoría personalizada de avance de carrera para testers de software sea el titulo de https://www.freerangetesters.com/mentoria-1-1-con-pato",
+              "fullTitle": "El titulo es el correcto para cada página en Free Range Tester Valida que Mentoría personalizada de avance de carrera para testers de software sea el titulo de https://www.freerangetesters.com/mentoria-1-1-con-pato",
+              "timedOut": null,
+              "duration": 2097,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(testData.Location);\ncy.title().should('include', testData.Title);",
+              "err": {},
+              "uuid": "b3b5177a-283d-4df1-b3cd-ee5e72d9402c",
+              "parentUUID": "94c08dfa-917c-4931-94e4-5993885c2329",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b3b5177a-283d-4df1-b3cd-ee5e72d9402c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2097,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "9fd083fe-56fb-4d7a-8a0b-39cb9de07333",
+          "title": "El titulo es el correcto para cada página en Free Range Tester",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Valida que Webinars en vivo sea el titulo de https://www.freerangetesters.com/talleres-y-webinars",
+              "fullTitle": "El titulo es el correcto para cada página en Free Range Tester Valida que Webinars en vivo sea el titulo de https://www.freerangetesters.com/talleres-y-webinars",
+              "timedOut": null,
+              "duration": 2269,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(testData.Location);\ncy.title().should('include', testData.Title);",
+              "err": {},
+              "uuid": "fc413b7c-9730-444d-b5ca-a6c7ab8243e0",
+              "parentUUID": "9fd083fe-56fb-4d7a-8a0b-39cb9de07333",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fc413b7c-9730-444d-b5ca-a6c7ab8243e0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2269,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}
