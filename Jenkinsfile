@@ -47,6 +47,7 @@ pipeline {
                     // Extraemos los valores de forma segura
                     def total = s.tests ?: 0
                     def passes = s.passes ?: 0
+                    def pendings = s.pendings ?: 0
                     def failures = s.failures ?: 0
                     def durationMs = s.duration ?: 0
                     // Simplificamos el cálculo de segundos
@@ -57,6 +58,7 @@ pipeline {
                     echo "   Tests Totales: ${total}"
                     echo "   Pasados:       ${passes}"
                     echo "   Fallidos:      ${failures}"
+                    echo "   Pendientes:    ${pendings}"
                     echo "   Duración:      ${durationSec} segundos"
                     echo "**********************************************"
                     
