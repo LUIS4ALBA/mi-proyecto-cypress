@@ -8,6 +8,9 @@
         "cypress": "^10.11.0",
         "cypress-axe": "^1.7.0",
         "cypress-xpath": "^2.0.1",
-        "mochawesome": "^7.1.4"
+        "mocha": "^11.7.5",
+        "mochawesome": "^7.1.4",
+        "mochawesome-merge": "^5.1.0",
+        "mochawesome-report-generator": "^6.3.2"
     }
 }
