@@ -68,3 +68,4 @@ pipeline {
             archiveArtifacts artifacts: 'cypress/reports/*.html, cypress/videos/**/*.mp4', allowEmptyArchive: true
         }
     }
+}
