@@ -18,9 +18,8 @@ pipeline {
         stage('Cypress Tests') {
             steps {
                 echo 'Ejecutando pruebas de Cypress...'
-                // Ejecutamos en modo headless (sin ventana)
-                // El "|| true" permite que el pipeline siga aunque fallen los tests
-                sh 'npx cypress run || true'
+                // Ejecutamos y permitimos que continúe para generar el reporte
+                sh 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/results,overwrite=false,html=false,json=true" || true'
             }
         }
 
@@ -29,9 +28,7 @@ pipeline {
                 echo 'Generando reporte unificado...'
                 // Creamos la carpeta por si no existe
                 sh 'mkdir -p cypress/results'
-                // Unimos los JSON
                 sh 'npx mochawesome-merge cypress/results/*.json > cypress/results/report.json'
-                // Generamos el HTML
                 sh 'npx marge cypress/results/report.json --reportDir cypress/reports --inline'
             }
         }
@@ -39,15 +36,21 @@ pipeline {
 
    post {
         always {
-            echo 'Guardando resultados y reportes...'
-            // Guardamos videos, capturas y el nuevo reporte HTML
-            archiveArtifacts artifacts: 'cypress/reports/*.html, cypress/videos/**/*.mp4, cypress/screenshots/**/*.png', allowEmptyArchive: true
-        }
-        success {
-            echo '¡Todo salió perfecto!'
-        }
-        failure {
-            echo 'Detección de fallos: Revisa el log de la consola y los videos.'
+            echo 'Publicando Reporte...'
+            archiveArtifacts artifacts: 'cypress/reports/*.html, cypress/videos/**/*.mp4', allowEmptyArchive: true
+            
+            // --- ESTE ES EL TRUCO ---
+            script {
+                // Leemos el JSON del reporte para ver si hay fallos
+                def reportJson = readJSON file: 'cypress/results/report.json'
+                def stats = reportJson.stats
+                
+                if (stats.failures > 0) {
+                    // Si hay fallos, marcamos el build como UNSTABLE (Amarillo)
+                    // Esto indica que el Pipeline terminó, pero los tests fallaron
+                    currentBuild.result = 'UNSTABLE'
+                    echo "Se detectaron ${stats.failures} fallos en los tests."
+                }
+            }
         }
     }
-}
