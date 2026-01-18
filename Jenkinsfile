@@ -47,11 +47,12 @@ pipeline {
                     // Extraemos los valores de forma segura
                     def total = s.tests ?: 0
                     def passes = s.passes ?: 0
-                    def pendings = s.pendings ?: 0
+                    def pendings = s.pending ?: 0
                     def failures = s.failures ?: 0
                     def durationMs = s.duration ?: 0
                     // Simplificamos el cálculo de segundos
-                    def durationSec = String.format("%.2f", durationMs / 1000)
+                    // Usamos 1000.0 para forzar división decimal
+                    def durationSec = String.format("%.2f", durationMs / 1000.0)
                     
                     echo "**********************************************"
                     echo "   RESUMEN DE EJECUCIÓN DE CYPRESS"
