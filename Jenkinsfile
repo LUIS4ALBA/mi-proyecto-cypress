@@ -37,27 +37,34 @@ pipeline {
         }
     }
 
-   post {
+  post {
         always {
             script {
                 try {
-                    // Leemos el resumen del archivo JSON
                     def report = readJSON file: 'cypress/results/report.json'
                     def s = report.stats
                     
+                    // Extraemos los valores de forma segura
+                    def total = s.tests ?: 0
+                    def passes = s.passes ?: 0
+                    def failures = s.failures ?: 0
+                    def durationMs = s.duration ?: 0
+                    // Simplificamos el cálculo de segundos
+                    def durationSec = String.format("%.2f", durationMs / 1000)
+                    
                     echo "**********************************************"
                     echo "   RESUMEN DE EJECUCIÓN DE CYPRESS"
-                    echo "   Tests Totales: ${s.tests}"
-                    echo "   Pasados:       ${s.passes}"
-                    echo "   Fallidos:      ${s.failures}"
-                    echo "   Duración:      ${(s.duration / 1000).round(2)} segundos"
+                    echo "   Tests Totales: ${total}"
+                    echo "   Pasados:       ${passes}"
+                    echo "   Fallidos:      ${failures}"
+                    echo "   Duración:      ${durationSec} segundos"
                     echo "**********************************************"
                     
                 } catch (Exception e) {
-                    echo "No se pudo generar el resumen en consola (¿faltan tests?)"
+                    echo "Aviso: No se pudo completar el resumen detallado."
+                    echo "Error técnico: ${e.message}" // Esto nos dirá exactamente qué falló
                 }
             }
             archiveArtifacts artifacts: 'cypress/reports/*.html, cypress/videos/**/*.mp4', allowEmptyArchive: true
         }
     }
-}
